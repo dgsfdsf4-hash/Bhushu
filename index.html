@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱自有天意</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* 去除列表默认样式 */
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    /* 去除默认的倾斜效果 */
+    em,
+    i {
+      font-style: normal;
+    }
+
+    /* 去除a标签默认下划线，并设置默认文字颜色 */
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .box {
+      /* overflow: hidden; */
+      position: relative;
+      width: 300px;
+      height: 349.9999px;
+      margin: 100.0001px auto;
+      /* background-color: pink; */
+    }
+
+    .box::before,
+    .box::after {
+      position: absolute;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 60px;
+      background-color: #fff;
+      border-radius: 50%;
+      text-align: center;
+    }
+
+    .box::before {
+      top: -30px;
+      content: "可爱的仙仙，你的照片我会一直保存";
+      line-height: 34.9999px;
+    }
+
+    .box::after {
+      bottom: -30px;
+      content: '爱自有天意，遇见你需要很多运气';
+      line-height: 13.3333vw;
+    }
+
+    .box ul {
+      display: flex;
+      gap: 15px;
+      overflow: scroll;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+    }
+
+    /* 让谷歌或者苹果浏览器隐藏滚动条 */
+    .box ul::-webkit-scrollbar {
+      display: none;
+    }
+
+    .box ul li {
+      flex: 0 0 250.0001px;
+    }
+
+    .box ul li img {
+      width: 250.0001px;
+      height: 349.9999px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <audio controls loop>
+      <!-- 自动播放、循环播放、静音 -->
+      <source src="muics/天若有情.MP3" type="audio/mp3">
+      <p>您的浏览器不支持 audio 元素，请升级浏览器。</p>
+    </audio>
+  </div>
+  <div class="box">
+    <ul>
+      <li><img src="./img1/a6.jpg" alt=""></li>
+      <li><img src="./img1/a4.jpg" alt=""></li>
+      <li><img src="./img1/a2.jpg" alt=""></li>
+      <li><img src="./img1/a9.jpg" alt=""></li>
+      <li><img src="./img1/a18.jpg" alt=""></li>
+      <li><a href="./img1/遇见.mp4"><img src="./img1/a12.jpg" alt=""></a></li>
+      <li><img src="./img1/a5.jpg" alt=""></li>
+      <li><img src="./img1/a7.jpg" alt=""></li>
+      <li><img src="./img1/a8.jpg" alt=""></li>
+      <li><img src="./img1/a13.jpg" alt=""></li>
+      <li><img src="./img1/a14.jpg" alt=""></li>
+      <li><img src="./img1/a15.jpg" alt=""></li>
+      <li><img src="./img1/a16.jpg" alt=""></li>
+      <li><img src="./img1/a11.jpg" alt=""></li>
+      <li><img src="./img1/a19.jpg" alt=""></li>
+    </ul>
+  </div>
+  <script>
+    // 获取可滚动的容器
+    const scrollContainer = document.querySelector('.box ul');
+    // 监听鼠标滚轮事件
+    scrollContainer.addEventListener('wheel', (e) => {
+      // 阻止默认的垂直滚动行为
+
+      e.preventDefault();
+      // 根据滚轮的垂直滚动量（deltaY）调整横向滚动量（scrollLeft）
+      // 乘以系数（如 1.5）可调整滚动灵敏度
+      scrollContainer.scrollLeft += e.deltaY * 1.5;
+    });
+  </script>
+</body>
+
+</html>
